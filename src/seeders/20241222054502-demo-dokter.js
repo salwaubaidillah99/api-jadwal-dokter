@@ -8,19 +8,19 @@ module.exports = {
         name: 'Dr. Andi',
         specialization: 'Dokter Umum',
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: null,
       },
       {
         name: 'Dr. Siti',
         specialization: 'Dokter Gigi',
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: null,
       },
       {
         name: 'Dr. Budi',
         specialization: 'Dokter Spesialis Jantung',
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: null,
       },
     ]);
   },

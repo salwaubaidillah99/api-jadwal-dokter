@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Jadwal.belongsTo(models.Dokter, {
-        foreignKey: 'dokterId', as: 'dokter'
+        foreignKey: 'dokterId',
       });
     }
   }
@@ -27,6 +27,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Jadwal',
+    timestamps: true,
+    createdAt: 'createdAt',
+    updatedAt: false,
   });
   return Jadwal;
 };

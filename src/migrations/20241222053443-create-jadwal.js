@@ -42,11 +42,13 @@ module.exports = {
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        allowNull: true,
+        type: Sequelize.DATE,
+        defaultValue: null,
       }
     });
   },
+
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Jadwals');
   }

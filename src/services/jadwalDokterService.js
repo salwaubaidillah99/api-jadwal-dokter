@@ -57,7 +57,7 @@ const jadwalDokterService = {
                         time_finish,
                         quota,
                         status,
-                        date_range: currentDate.format('YYYY-MM-DD'),
+                        date_range: currentDate.format('YYYY-MM-DD')
                     });
                     createdSchedules.push(jadwal);
                 }
