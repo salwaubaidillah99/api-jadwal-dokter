@@ -10,7 +10,7 @@ const userService = {
     login: async (req, res) => {
         try {
             const {email, password} = req.body;
-            if(!email, !password){
+            if(!email || !password){
                 return response.error(res, 'Email dan password tidak boleh Kosong', 400);
             }
         
