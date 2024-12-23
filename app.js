@@ -1,13 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const jadwalDokterRouter = require('./src/router/jadwalDokterRouter');
+const router = require('./src/router/router')
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 
-app.use('/api', jadwalDokterRouter);
+app.use('/api', router);
+app.use('/api', router);
 
 app.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
