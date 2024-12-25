@@ -14,6 +14,7 @@ router.use((req, res, next) => {
     next();
 });
 
+router.post('/register', userController.register);
 router.post('/login', userController.login);
 router.post('/jadwal', authMiddleware.authenticate, jadwalDokterController.create);
 router.get('/jadwal',authMiddleware.authenticate,  jadwalDokterController.getAll);

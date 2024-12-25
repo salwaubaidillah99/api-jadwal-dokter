@@ -13,8 +13,7 @@ module.exports = {
         password: hashedPassword,
         createdAt: new Date(),
         updatedAt: null
-  
-  },
+      },
 ]);
 },
 

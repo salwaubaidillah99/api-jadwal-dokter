@@ -4,7 +4,116 @@
  *   name: User
  *   description: Product management (create, read, update, delete)
  */
+
 /**
+ * @swagger
+ * /api/register:
+ *   post:
+ *     summary: User registration
+ *     tags: [User]
+ *     description: Endpoint untuk registrasi pengguna baru dengan menentukan role berdasarkan email.
+ *     operationId: registerUser
+ *     requestBody:
+ *       description: User's information to register
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - username
+ *               - email
+ *               - password
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 description: Nama pengguna.
+ *                 example: "Salwa Fadillah"
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 description: Email pengguna.
+ *                 example: "salwafadillah@gmail.com"
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 description: Password pengguna.
+ *                 example: "password123"
+ *     responses:
+ *       201:
+ *         description: Registrasi berhasil
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "success"
+ *                 message:
+ *                   type: string
+ *                   example: "User berhasil terdaftar"
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: integer
+ *                       description: ID pengguna
+ *                       example: 1
+ *                     username:
+ *                       type: string
+ *                       description: Nama pengguna
+ *                       example: "Salwa Fadillah"
+ *                     email:
+ *                       type: string
+ *                       description: Email pengguna
+ *                       example: "salwafadillah@gmail.com"
+ *                     role:
+ *                       type: string
+ *                       description: Role pengguna berdasarkan email
+ *                       example: "pasien"
+ *       400:
+ *         description: Semua field harus diisi
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "Semua field harus diisi"
+ *       409:
+ *         description: Email sudah terdaftar
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "Email sudah terdaftar"
+ *       500:
+ *         description: Terjadi kesalahan pada server
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "Terjadi Kesalahan pada server"
+ */
+
+/**
+ * 
  * @swagger
  * /api/login:
  *   post:
@@ -121,3 +230,4 @@
  *                   type: string
  *                   example: "Terjadi Kesalahan pada server"
  */
+
