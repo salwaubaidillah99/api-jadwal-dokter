@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
     timestamps: true,
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
+    updatedAt: false,
     defaultScope: {
       attributes:
       {
