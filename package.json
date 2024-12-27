@@ -21,6 +21,7 @@
     "pg-hstore": "^2.3.4",
     "salwa-fadillah-backend": "file:",
     "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   }

@@ -9,24 +9,31 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      name_dokter: {
         type: Sequelize.STRING
       },
       specialization: {
         type: Sequelize.STRING
+      },
+      userId : {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: true,
+        allowNull:true,
         type: Sequelize.DATE,
-        defaultValue: null,
+        defaultValue: null
       }
     });
   },
-
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Dokters');
   }

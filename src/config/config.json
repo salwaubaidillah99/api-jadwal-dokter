@@ -2,9 +2,11 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "db_jadwaldokter",
+    "database": "database_jadwaldokter",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+     "migrationStorageTableName": "SequelizeMeta",
+  "migrationsPath": "src/migrations"
   },
   "test": {
     "username": "root",

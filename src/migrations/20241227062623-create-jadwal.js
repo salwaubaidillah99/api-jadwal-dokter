@@ -12,12 +12,10 @@ module.exports = {
       dokterId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
+        references: {
           model: 'Dokters',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
+          key: 'id'
+        }
       },
       day: {
         type: Sequelize.STRING
@@ -42,13 +40,11 @@ module.exports = {
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: true,
-        type: Sequelize.DATE,
-        defaultValue: null,
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },
-
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Jadwals');
   }

@@ -83,7 +83,7 @@ const jadwalDokterService = {
             const schedules = await Jadwal.findAll({
                 include: {
                     model: Dokter,
-                    attributes: ['name'], 
+                    attributes: ['nama_dokter'], 
                 },
             });
 
