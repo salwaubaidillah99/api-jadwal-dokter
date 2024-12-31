@@ -231,3 +231,92 @@
  *                   example: "Terjadi Kesalahan pada server"
  */
 
+/**
+ * @swagger
+ * /api/users/{id}:
+ *   get:
+ *     summary: Get User By ID
+ *     tags: [User]
+ *     description: Endpoint untuk mendapatkan detail pengguna berdasarkan ID.
+ *     operationId: getUserById
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: ID pengguna yang ingin dicari.
+ *         schema:
+ *           type: integer
+ *           example: 1
+ *     responses:
+ *       200:
+ *         description: Data pengguna berhasil ditemukan
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "success"
+ *                 message:
+ *                   type: string
+ *                   example: "User ditemukan"
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: integer
+ *                       description: ID pengguna
+ *                       example: 1
+ *                     username:
+ *                       type: string
+ *                       description: Nama pengguna
+ *                       example: "user123"
+ *                     email:
+ *                       type: string
+ *                       description: Email pengguna
+ *                       example: "user@example.com"
+ *                     role:
+ *                       type: string
+ *                       description: Role pengguna
+ *                       example: "Pasien"
+ *       400:
+ *         description: ID tidak valid atau tidak diberikan
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "ID tidak boleh kosong"
+ *       404:
+ *         description: Pengguna dengan ID tersebut tidak ditemukan
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "User tidak ditemukan"
+ *       500:
+ *         description: Terjadi kesalahan pada server
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: string
+ *                   example: "error"
+ *                 message:
+ *                   type: string
+ *                   example: "Terjadi kesalahan pada server"
+ */

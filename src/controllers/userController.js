@@ -14,14 +14,24 @@ const userController = {
     }
   },
   
-    login: async (req, res) => {
+  login: async (req, res) => {
     try {
       await userService.login(req, res);
     } catch (error){
         console.error('error in userController:', error);
         return response.error(res, 'Terjadi Kesalahan di server', 500);
     }
-}
+  },
+
+  getById: async(req, res) => {
+    try {
+      await userService.getById(req, res);
+    } catch (error){
+      console.error('error in userController: ', error);
+      return response.error(res, 'Terjadi Kesalahan di server', 500);
+    }
+  }
+
 };
 
 module.exports= userController;

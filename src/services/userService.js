@@ -84,6 +84,32 @@ const userService = {
             return response.error(res, 'Terjadi Kesalahan pada server', 500);
         }
     },
+
+    getById: async (req, res) => {
+        try {
+            const { id } = req.params;
+
+            if (!id) {
+                return response.error(res, 'ID tidak boleh kosong', 400);
+            }
+
+            const user = await User.findByPk(id);
+
+            if (!user) {
+                return response.error(res, 'User tidak ditemukan', 404);
+            }
+
+            return response.success(res, 'User ditemukan', {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                role: user.role
+            });
+        } catch (error) {
+            console.error('Get User By ID Error:', error);
+            return response.error(res, 'Terjadi Kesalahan pada server', 500);
+        }
+    },
 };
 
 module.exports = userService;
