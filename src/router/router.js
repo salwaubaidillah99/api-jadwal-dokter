@@ -18,6 +18,7 @@ router.post('/register', userController.register);
 router.post('/login', userController.login);
 router.get('/users/:id',authMiddleware.authenticate, userController.getById);
 router.post('/jadwal', authMiddleware.authenticate, jadwalDokterController.create);
-router.get('/jadwal',authMiddleware.authenticate,  jadwalDokterController.getAll);
+router.get('/jadwal', authMiddleware.authenticate, jadwalDokterController.getAll);
+router.get('jadwal/:id', userController.getById);
 
 module.exports = router;

@@ -8,12 +8,12 @@ module.exports = {
     const hashedPassword = await bcrypt.hash('password123', 10);
     await queryInterface.bulkInsert('Users', [
       {
-        username: 'salwafadillah',
-        email: 'salwafadillah3@gmail.com',
+        username: 'salwafadillah2',
+        email: 'salwafadillah.admin@hospital.com',
         password: hashedPassword,
         createdAt: new Date(),
         updatedAt: null
-      },
+      }
 ]);
 },
 

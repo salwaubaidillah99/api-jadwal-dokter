@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api', router);
-app.use('/api', router);
 
 app.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
